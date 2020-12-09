@@ -46,7 +46,6 @@ with open(csvpath) as csv_file:
 #then find the average of those changes        
     average_change = sum(difference) / len(difference)
     
-
 print(f"Financial Analysis")
 print(f"----------------------------")
 print(f"Total Months: {monthcount}")
@@ -54,6 +53,20 @@ print(f"Total: ${total}")
 print(f"Average Change: ${average_change:.2f}")
 print(f"Greatest Increase in Profits: {increase['month']} ${increase['profits']}")
 print(f"Greatest Decrease in Profits: {decrease['month']} ${decrease['losses']}")
+
+output = open("PyBank/Analysis/file.txt","w")
+analysis = output(file.txt, delimiter=',')
+output.write(f"Financial Analysis")
+output.write(f"----------------------------")
+output.write(f"Total Months: {monthcount}")
+output.write(f"Total: ${total}")
+output.write(f"Average Change: ${average_change:.2f}")
+output.write(f"Greatest Increase in Profits: {increase['month']} ${increase['profits']}")
+output.write(f"Greatest Decrease in Profits: {decrease['month']} ${decrease['losses']}")
+
+
+
+
 
 
 
