@@ -1,9 +1,12 @@
 import csv
+output = open("PyPoll/Analysis/file.txt","w")
 csvpath= 'PyPoll/Resources/02-Homework_03-Python_Instructions_PyPoll_Resources_election_data.csv'
 #Open CSV as Reader
 with open(csvpath) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter = ",")
     csv_header = next(csv_file)
+    print(f"Header:{csv_header}")
+    output.write(f"Header:{csv_header}\n")
 
 #Declare Variables
     votescast=0
@@ -30,6 +33,10 @@ print(f"Election Results")
 print(f"-------------------------")
 print(f"Total Votes: {votescast}")
 print(f"-------------------------")
+output.write(f"Election Results\n")
+output.write(f"-------------------------\n")
+output.write(f"Total Votes: {votescast}\n")
+output.write(f"-------------------------\n")
 
 #The percentage of votes each candidate won
 for name in numberwon:
@@ -37,6 +44,7 @@ for name in numberwon:
     percentage = votes / votescast
     pretty = percentage * 100
     print(f"{name}: {pretty:.3f}% ({votes})")
+    output.write(f"{name}: {pretty:.3f}% ({votes})\n")
 
 #The winner of the election based on popular vote.
     if votes > winnervotes: 
@@ -44,5 +52,11 @@ for name in numberwon:
         winnername = name
 #Print 
 print(f"-------------------------")
-print(f"Winner:{winnername}")
+print(f"Winner: {winnername}")
 print(f"-------------------------")
+output.write(f"-------------------------\n")
+output.write(f"Winner: {winnername}\n")
+output.write(f"-------------------------\n")
+
+
+
