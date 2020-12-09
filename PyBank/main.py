@@ -55,16 +55,13 @@ print(f"Greatest Increase in Profits: {increase['month']} ${increase['profits']}
 print(f"Greatest Decrease in Profits: {decrease['month']} ${decrease['losses']}")
 
 output = open("PyBank/Analysis/file.txt","w")
-analysis = output(file.txt, delimiter=',')
-output.write(f"Financial Analysis")
-output.write(f"----------------------------")
-output.write(f"Total Months: {monthcount}")
-output.write(f"Total: ${total}")
-output.write(f"Average Change: ${average_change:.2f}")
-output.write(f"Greatest Increase in Profits: {increase['month']} ${increase['profits']}")
-output.write(f"Greatest Decrease in Profits: {decrease['month']} ${decrease['losses']}")
-
-
+output.write(f"Financial Analysis\n")
+output.write(f"----------------------------\n")
+output.write(f"Total Months: {monthcount}\n")
+output.write(f"Total: ${total}\n")
+output.write(f"Average Change: ${average_change:.2f}\n")
+output.write(f"Greatest Increase in Profits: {increase['month']} ${increase['profits']}\n")
+output.write(f"Greatest Decrease in Profits: {decrease['month']} ${decrease['losses']}\n")
 
 
 
